@@ -1,17 +1,23 @@
-<div class="relative lg:sticky lg:top-10 mb-10 md:mb-20 z-50">
+<div class="relative lg:sticky lg:top-10 mb-10 md:mb-20 z-30">
   <%= image_tag('berries.png', srcset: { 'berries@2x.png' => '2x' }, class: 'hidden sm:block sm:absolute sm:z-50 sm:-right-3 sm:-top-5') %>
 
-
-  <div class="md:rounded-2xl lg:mx-auto bg-white overflow-hidden">
-    <div class="bg-purple-500 border border-purple-500 p-5  space-y-3 text-white">
+  <div class="md:rounded-2xl lg:mx-auto bg-white backdrop-blur-xl dark:text-slate-100 dark:bg-slate-700/90 overflow-hidden">
+    <div data-feed-target="formBg" class="bg-indigo-500 dark:bg-purple-600 p-5 space-y-3 text-white">
       <%= form_with do |f| %>
-        <h1 class="h1">Add feed</h1>
-        <%= f.text_field '', placeholder: 'www.example.com', class: 'input',
-                         data: { action: "input->feed#check", 'feed-target': 'url' } %>
+        <h1 class="h1 mb-3">Link to website or RSS feed</h1>
+        <div class="relative">
+          <%= f.text_field '', placeholder: 'www.example.com', class: 'input focus:opacity-100',
+                           data: { action: "input->feed#check", 'feed-target': 'url' } %>
+          <button data-feed-target="clearInput" data-action="click->feed#reset" type="reset" class="absolute rounded-full aspect-square hover:bg-purple-100 right-1 hidden p-3 top-1/2 -translate-y-1/2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-purple-500" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+        </div>
         </div>
 
-        <div data-feed-target="config" class=" space-y-5 p-5">
-          <div class="grid grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 items-center">
+        <div data-feed-target="config" class="p-5 hidden">
+          <div class="grid grid-cols-1 gap-2 md:gap-3 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 items-center">
             <p class="md:col-span-1 mb-2 md:mb-0 lg:mb-2 xl:mb-0 xl:col-span-1">
               Title
             </p>
@@ -32,8 +38,13 @@
             </div>
 
             <div class="flex justify-start w-full md:col-span-2 md:col-start-2 lg:col-start-auto  xl:col-start-2 xl:col-span-2 items-center">
-              <%= check_box_tag :compact , 'no', false, class: 'h-6 w-6 text-purple-500  border border-slate-300 hover:border-purple-300 active:bg-purple-500 checked:bg-purple-500 bg-slate-50 mr-3 rounded' %>
+              <%= check_box_tag :compact, 'no', false, class: 'h-6 w-6 checkbox' %>
               <%= f.label :compact, 'Compact mode' %>
+            </div>
+            <div class="fixed bottom-5 right-5 md:relative md:col-span-2 md:col-start-2 lg:col-start-auto  xl:col-start-2 xl:col-span-2 md:bottom-0 md:right-0 text-2xl md:text-xl">
+              <div class="flex justify-start w-full  items-center">
+                <%= link_to 'Add to digest', '/dashboard/empty', class: 'btn btn-primary' %>
+              </div>
             </div>
           </div>
         </div>
@@ -48,7 +59,7 @@
                 clip-rule="evenodd"/>
         </svg>
         <p>
-          Oops. It looks like this site has no rss feed and we can't parse it. <a href="#">Write</a>
+          Oops. It looks like this site has no rss feed or we can't parse it. <a href="#">Write</a>
           to us if it's important
           to you. We'll see if we can add it to our list
         </p>
@@ -69,7 +80,7 @@
   <div data-feed-target="preview" class="bg-white hidden p-5 lg:p-10 h-full ">
     <%= render 'email' %>
   </div>
-  <div data-feed-target="empty" class="lg:fixed lg:bottom-5">
+  <div data-feed-target="empty" class="lg:fixed lg:bottom-1/2">
     <%= image_tag('new-feed.png', srcset: { 'new-feed@2x.png' => '2x' }, class: 'mx-auto') %>
   </div>
 <% end %>
