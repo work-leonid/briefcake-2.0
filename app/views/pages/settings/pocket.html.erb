@@ -1,0 +1,24 @@
+<div class="flex gap-3 mb-5 text-base items-center">
+  <%= link_to 'Delivery time', 'delivery-time', class: 'px-5 py-2 border border-slate-200 hover:bg-slate-50 rounded-full' %>
+  <%= link_to 'Pocket', 'settings/pocket', class: 'bg-slate-100 border border-slate-200 px-5 py-2 rounded-full hover:cursor-default' %>
+</div>
+
+<h1 class="h1">Custom delivery time</h1>
+
+<div class="flex items-center gap-2">
+  <input type="checkbox" id="confirm" name="confirm" value="yes"
+         class="h-5 w-5 appearance-none checked:bg-purple-500"/>
+  <label for="confirm" class="">
+    Button 'Add to Pocket'
+  </label>
+</div>
+
+<div class="space-y-5 mt-5">
+  <p class="">Turn on the integration and the "Add to Pocket" button will appear in
+    your
+    email. After you click on it,
+    the article
+    will be added to your Pocket.</p>
+
+  <%= link_to 'Update', root_path, class: 'btn btn-primary' %>
+</div>

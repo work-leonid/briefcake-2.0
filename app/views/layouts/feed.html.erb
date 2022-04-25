@@ -1,0 +1,25 @@
+<% content_for :content do %>
+  <%#= render "shared/nav" %>
+  <div data-controller="feed" class="flex gap-10 mt-10 h-full">
+    <%= link_to '/dashboard/empty', class: 'w-16 z-50 h-16 fixed md:sticky left-5 bottom-5 md:top-5 shrink-0 aspect-square flex items-center justify-center bg-white/60 hover:bg-white rounded-full border hover:shadow-slate-200/60 hover:text-slate-600 bg-white border-slate-200 text-slate-700' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+           stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+      </svg>
+    <% end %>
+    <div class="flex xl:gap-10 flex-col lg:flex-row w-full justify-start items-start">
+      <div class="lg:w-2/5 w-full relative lg:sticky lg:top-10">
+        <%= yield %>
+      </div>
+
+      <div class="flex-1 w-full flex justify-center lg:w-3/5 mt-5 lg:mt-0 lg:pl-10 ">
+
+          <%= yield :preview  %>
+
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render template: "layouts/application" %>
+

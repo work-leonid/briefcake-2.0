@@ -12,9 +12,9 @@
   <%= javascript_importmap_tags %>
 </head>
 
-<body class="selection:bg-yellow-100 bg-slate-100  text-xl text-[#002E65] font-nunito">
-<main class="container mx-auto px-5 md:px-0">
+<body class="selection:bg-yellow-100 bg-slate-100 dark:bg-slate-800 text-xl text-[#002E65] dark:text-slate-50 font-nunito">
+<div class="container mx-auto">
   <%= content_for?(:content) ? yield(:content) : yield %>
-</main>
+</div>
 </body>
 </html>

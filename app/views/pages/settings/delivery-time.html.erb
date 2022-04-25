@@ -1,0 +1,41 @@
+<div class="flex gap-3 mb-5 text-base items-center">
+  <%= link_to 'Delivery time', 'delivery-time', class: 'bg-slate-100 border border-slate-200 px-5 py-2 rounded-full hover:cursor-default' %>
+  <%= link_to 'Pocket', 'pocket', class: 'px-5 py-2 border border-slate-200 hover:bg-slate-50 rounded-full' %>
+</div>
+
+<h1 class="h1">Custom delivery time</h1>
+
+<div class="bg-amber-50 border border-amber-200 p-5 mb-10 gap-10 rounded-xl flex justify-between">
+  <p class="">
+    Set custom delivery time, unlimited feeds per day and more
+  </p>
+  <a href="#"
+     class="col-start-2 bg-amber-500 font-bold px-5 py-3 rounded-full text-white text-center flex flex-nowrap whitespace-nowrap items-center">
+    Upgrade to PRO
+  </a>
+</div>
+
+<div class="space-y-3 opacity-20">
+  <div class="grid grid-cols-3 items-center">
+    <p class="col-span-1">Time zone</p>
+    <input type="text" value="(GMT+00:00) UTC"
+           class="bg-slate-50 col-span-2 rounded-md px-3 py-3 border border-slate-200 shadow-inner ">
+  </div>
+  <div class="grid grid-cols-3 items-center">
+    <p class="col-span-1">Send email at</p>
+    <div class="flex gap-1 items-center">
+      <input type="text" value="00"
+             class="bg-slate-50 col-span-2 rounded-md px-3 py-3 border border-slate-200 shadow-inner w-12">
+      :
+      <input type="text" value="00"
+             class="bg-slate-50 col-span-2 rounded-md px-3 py-3 border border-slate-200 shadow-inner w-12">
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-3">
+    <a href="#"
+       class="col-start-2 bg-purple-500 font-bold px-5 py-3 rounded-full text-white inline-block text-center">Update
+    </a>
+  </div>
+</div>

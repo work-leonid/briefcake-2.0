@@ -1,0 +1,30 @@
+<h1 class="h1 mb-5">Account</h1>
+
+<div class="space-y-3 mb-10">
+  <div class="grid grid-cols-3 items-center">
+    <p class="col-span-1">Email</p>
+    <input type="text" value="work.leonid@gmail.com" class="input">
+  </div>
+
+  <div class="grid grid-cols-3">
+    <%= link_to 'Update', root_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+
+<div class="border-t border-red-200 p-5 bg-gradient-to-b from-red-50">
+  <div class="flex gap-3">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+         stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    </svg>
+    <div>
+      <h1 class="text-xl font-bold mb-2 text-red-500">Danger zone</h1>
+      <p class="mb-5">When you click the link below there is no going back, your account details will be removed
+        immediately.</p>
+     <%= link_to 'Delete my account and all my data', root_path, class: 'btn bg-red-500 hover:bg-red-600' %>
+    </div>
+
+  </div>
+
+
+</div>
