@@ -5,7 +5,7 @@
     <div data-feed-target="formBg" class="bg-indigo-500 dark:bg-purple-600 p-5 space-y-3 text-white">
       <%= form_with do |f| %>
         <h1 class="h1 mb-3">Link to website or RSS feed</h1>
-        <div class="relative">
+        <div class="relative"> 
           <%= f.text_field '', placeholder: 'www.example.com', class: 'input focus:opacity-100',
                            data: { action: "input->feed#check", 'feed-target': 'url' } %>
           <button data-feed-target="clearInput" data-action="click->feed#reset" type="reset" class="absolute rounded-full aspect-square hover:bg-purple-100 right-1 hidden p-3 top-1/2 -translate-y-1/2">
