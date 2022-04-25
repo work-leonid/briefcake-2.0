@@ -11,8 +11,9 @@ export default class extends Controller {
         this.inspirationTarget.classList.remove("hidden")
         this.inspirationTarget.classList.add("scale-100")
         this.formBgTarget.classList.add("bg-indigo-500")
-
         this.clearInputTarget.classList.add("hidden")
+        this.formBgTarget.classList.remove("bg-red-400")
+        this.formBgTarget.classList.remove("bg-purple-500")
     }
     check(event) {
         const element = this.urlTarget
@@ -20,6 +21,7 @@ export default class extends Controller {
 
         if (url.length === 0) {
             this.errorMessageTarget.classList.add("hidden")
+            this.clearInputTarget.classList.add("hidden")
         }
         else if  (url == "www") {
             this.inspirationTarget.classList.add("hidden")
@@ -48,6 +50,8 @@ export default class extends Controller {
             this.inspirationTarget.classList.add("scale-100")
             this.formBgTarget.classList.add("bg-indigo-500")
             this.clearInputTarget.classList.remove("hidden")
+            this.formBgTarget.classList.remove("bg-red-400")
+            this.formBgTarget.classList.remove("bg-purple-500")
         }
     }
 
