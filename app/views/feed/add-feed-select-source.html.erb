@@ -2,7 +2,7 @@
   <%= image_tag('berries.png', srcset: { 'berries@2x.png' => '2x' }, class: 'hidden sm:block sm:absolute z-50 sm:-right-3 sm:-top-5') %>
 
   <div class="sm:rounded-2xl lg:mx-auto bg-white backdrop-blur-xl dark:text-slate-100 dark:bg-slate-700/90 overflow-hidden">
-    <div data-feed-target="formBg" class="bg-indigo-500 dark:bg-purple-600 p-5 space-y-3 text-white">
+    <div data-feed-target="formBg" class="bg-indigo-500 dark:bg-purple-600 z-30 p-5 space-y-3 text-white">
       <%= form_with do |f| %>
         <h1 class="h1 mb-3 mr-10">Link to website or RSS feed</h1>
         <div class="relative">
