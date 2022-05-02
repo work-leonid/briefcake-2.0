@@ -4,6 +4,8 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.view_component.show_previews = true
+  config.lookbook.listen = true
+  config.lookbook.runtime_parsing = true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
