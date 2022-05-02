@@ -6,7 +6,7 @@ require_relative "config/application"
 Rails.application.load_tasks
 
 if Rails.env.production?
-  Rake::Task['assets:precompile'].enchance do
+  Rake::Task['assets:precompile'].enhance do
     Rake::Task["lookbook:previews:preparse"].invoke
   end
 end
