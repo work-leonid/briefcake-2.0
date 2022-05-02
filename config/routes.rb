@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  if Rails.env.development?
-    mount Lookbook::Engine, at: "/lookbook"
-  end
+  mount Lookbook::Engine, at: "/lookbook"
 
   get "pages/*page", to: "pages#show"
   get "dashboard/:page", to: "dashboard#show"
