@@ -11,16 +11,6 @@ module Briefcake20
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    # ViewComponent
-    config.view_component.show_previews = true
-    config.view_component.preview_controller = "PreviewController"
-
-    # Lookbook
-    if Rails.env.development?
-      config.lookbook.listen_paths << Rails.root.join('../app/components')
-    else
-      config.lookbook.auto_refresh = false
-    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
